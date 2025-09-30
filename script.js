@@ -1,6 +1,6 @@
 const inputBox = document.getElementById('input-box')
 const listContainer = document.getElementById('list-container')
-function addTask () {
+function addTask() {
   if (inputBox.value === '') {
     alert('You must write something!')
   } else {
@@ -13,24 +13,26 @@ function addTask () {
   }
   inputBox.value = ''
 
-  saveData() 
+  saveData()
 }
 addTask()
-listContainer.addEventListener  ('click', function(elem) {
-  if (elem.target.tagName === 'LI') {
-    elem.target.classList.toggle('check')
 
-    saveData() 
-  } else if (elem.target.tagName === 'SPAN') {
-    elem.target.parentElement.remove()
-
-    saveData() 
-  }
-}, false)
-function saveData () {
-  localStorage.setItem('data', listContainer.innerHTML)
+listContainer.addEventListener('click', function (elem) {
+    if (elem.target.tagName === 'LI') {
+      elem.target.classList.toggle('check')
+      saveData()
+    } else if (elem.target.tagName === 'SPAN') {
+      elem.target.parentElement.remove()
+      saveData()
+    }
+  },
+  false
+)
+function saveData() {
+  localStorage.setItem('data', listContainer.innerHTML);
 }
-function showTask () {
+function showTask() {
   listContainer.innerHTML = localStorage.getItem('data')
+  
 }
 showTask()
