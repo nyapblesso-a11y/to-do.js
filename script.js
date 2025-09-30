@@ -10,17 +10,20 @@ function addTask () {
     const span = document.createElement('span')
     span.innerHTML = '\u00d7'
     li.appendChild(span)
-   }
+  }
   inputBox.value = ''
+
   saveData() 
 }
 addTask()
-listContainer.addEventListener ('click', function(elem) {
+listContainer.addEventListener  ('click', function(elem) {
   if (elem.target.tagName === 'LI') {
     elem.target.classList.toggle('check')
+
     saveData() 
   } else if (elem.target.tagName === 'SPAN') {
     elem.target.parentElement.remove()
+
     saveData() 
   }
 }, false)
