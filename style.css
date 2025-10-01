@@ -2,7 +2,7 @@
   margin: 0;
   padding: 0;
   box-sizing: border-box;
-  font-family: "Poppins", sans-serif;
+  font-family: sans-serif;
 }
 
 .container {
@@ -79,7 +79,7 @@ ul li::after {
   position: absolute;
   height: 28px;
   width: 28px;
-  background-image: url(./to-do-img/unchecked.png);
+  background-image: url("./to-do-img/unchecked.png");
   background-size: cover;
   background-position: center;
   top: 12px;
@@ -92,7 +92,7 @@ ul li.check {
 }
 
 ul li.check::after {
-  background-image: url(./to-do-img/checked.png);
+  background-image: url("./to-do-img/checked.png");
 }
 
 ul li span {
