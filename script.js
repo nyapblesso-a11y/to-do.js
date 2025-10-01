@@ -1,7 +1,7 @@
 const inputBox = document.getElementById('input-box')
 const listContainer = document.getElementById('list-container')
 function addTask () {
-  if (inputBox.value === '') {
+  if (inputBox.value === '')  {
     alert('You must write something!')
   } else {
     const li = document.createElement('li')
@@ -18,21 +18,19 @@ function addTask () {
 addTask()
 
 listContainer.addEventListener('click', function (elem) {
-  if (elem.target.tagName === 'LI') {
+if (elem.target.tagName === 'LI') {
     elem.target.classList.toggle('check')
     saveData()
     } else if (elem.target.tagName === 'SPAN') {
       elem.target.parentElement.remove()
       saveData()
     }
-},
-  false
+},false
 )
 function saveData() {
-  localStorage.setItem('data', listContainer.innerHTML);
+  localStorage.setItem('data', listContainer.innerHTML)
 }
 function showTask () {
   listContainer.innerHTML = localStorage.getItem('data')
-  
 }
 showTask()
