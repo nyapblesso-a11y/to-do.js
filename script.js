@@ -21,12 +21,12 @@ listContainer.addEventListener('click', function (elem) {
   if (elem.target.tagName === 'LI') {
     elem.target.classList.toggle('check')
     saveData()
-    } else if (elem.target.tagName === 'SPAN') {
-      elem.target.parentElement.remove()
+  } else if (elem.target.tagName === 'SPAN') {
+    elem.target.parentElement.remove()
     saveData()
   }
 }, false)
-function saveData() {
+function saveData () {
   localStorage.setItem('data', listContainer.innerHTML)
 }
 function showTask () {
